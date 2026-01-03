@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>For My Love ❤️</title>
+
+<style>
+body{
+margin:0;
+height:100vh;
+overflow:hidden;
+background:linear-gradient(135deg,#ff5f6d,#ffc371);
+display:flex;
+justify-content:center;
+align-items:center;
+font-family:'Comic Sans MS', cursive;
+}
+
+/* Main card */
+.card{
+background:white;
+padding:30px;
+border-radius:25px;
+text-align:center;
+box-shadow:0 25px 50px rgba(0,0,0,0.3);
+animation:zoom 1.5s ease;
+z-index:5;
+}
+
+h1{
+color:#ff3366;
+font-size:2.7em;
+animation:pulse 1.5s infinite;
+}
+
+p{
+font-size:1.3em;
+color:#333;
+}
+
+/* Button */
+button{
+margin-top:15px;
+padding:14px 32px;
+border:none;
+border-radius:40px;
+background:#ff3366;
+color:white;
+font-size:1.1em;
+cursor:pointer;
+animation:bounce 2s infinite;
+}
+
+/* Floating hearts */
+.heart{
+position:absolute;
+font-size:22px;
+animation:float 6s linear infinite;
+}
+
+/* Cartoon couple */
+.couple{
+position:absolute;
+bottom:0;
+width:100%;
+text-align:center;
+font-size:80px;
+animation:couple 2s infinite;
+}
+
+/* Kiss effect */
+.kiss{
+position:absolute;
+font-size:45px;
+animation:kiss 1.2s ease forwards;
+}
+
+/* Animations */
+@keyframes float{
+0%{transform:translateY(100vh);opacity:1}
+100%{transform:translateY(-10vh);opacity:0}
+}
+@keyframes zoom{
+0%{transform:scale(0)}
+100%{transform:scale(1)}
+}
+@keyframes pulse{
+0%,100%{transform:scale(1)}
+50%{transform:scale(1.1)}
+}
+@keyframes bounce{
+0%,100%{transform:translateY(0)}
+50%{transform:translateY(-10px)}
+}
+@keyframes couple{
+0%,100%{transform:translateY(0)}
+50%{transform:translateY(-8px)}
+}
+@keyframes kiss{
+0%{transform:scale(0);opacity:1}
+100%{transform:scale(2);opacity:0}
+}
+</style>
+</head>
+
+<body>
+
+<!-- Music (Hindi Love Song – instrumental style safe link) -->
+<audio autoplay loop>
+  <source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_4c7dbe5f3f.mp3?filename=romantic-piano-112199.mp3" type="audio/mpeg">
+</audio>
+
+<div class="card">
+<h1>I Love You So Much ❤️</h1>
+<p>You are my world 🥰</p>
+<p>I want to kiss you 😘</p>
+<button onclick="sendKiss()">Send Kiss 💋</button>
+</div>
+
+<!-- Cartoon couple -->
+<div class="couple">👩‍❤️‍👨</div>
+
+<script>
+// Hearts animation
+setInterval(()=>{
+let h=document.createElement("div");
+h.className="heart";
+h.innerHTML="❤️";
+h.style.left=Math.random()*100+"vw";
+h.style.fontSize=(20+Math.random()*30)+"px";
+document.body.appendChild(h);
+setTimeout(()=>h.remove(),6000);
+},250);
+
+// Kiss animation
+function sendKiss(){
+let k=document.createElement("div");
+k.className="kiss";
+k.innerHTML="💋";
+k.style.left="50%";
+k.style.top="50%";
+document.body.appendChild(k);
+setTimeout(()=>k.remove(),1200);
+}
+</script>
+
+</body>
+  </html>
